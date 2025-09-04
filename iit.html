@@ -956,9 +956,16 @@
     }
 
     .video-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
+  width: min(800px, 92vw);  /* narrower than full screen => “zoomed out” */
+  margin: 0 auto;
+}
+
+@media (max-width: 400px) {
+  .video-container {
+    width: 88vw;            /* a touch more zoom-out on very small phones */
+  }
+}
+
 
     .video-wrapper {
       position: relative;
